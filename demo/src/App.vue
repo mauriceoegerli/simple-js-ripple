@@ -1,7 +1,9 @@
 <script setup lang="ts"></script>
 
 <template>
-  <a href="#" @click.prevent v-ripple class="button">button</a>
+  <div class="container-div">
+    <a href="#" @click.prevent v-ripple class="button">button</a>
+  </div>
 </template>
 
 <style>
@@ -12,6 +14,10 @@
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.container-div {
+  max-width: 300px;
 }
 
 .button {

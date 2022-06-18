@@ -3,25 +3,36 @@ export { vueDirective } from './vueDirective';
 export const register = (element: HTMLElement) => {
   element.classList.add('x-ripple-js__ripple-button');
 
-  let spanElement: HTMLSpanElement = null;
-
   element.addEventListener('pointerdown', (e) => {
     element.setPointerCapture(e.pointerId);
-    spanElement = onElementClick({
+    const spanElement = onElementClick({
       mainElement: element,
       posX: e.clientX,
       posY: e.clientY
     });
-  });
 
-  element.addEventListener('pointerup', (e) => {
-    element.releasePointerCapture(e.pointerId);
-    spanElement.classList.add('x-ripple-release');
-    setTimeout(() => {
-      if (spanElement) {
-        spanElement.remove();
+    let isFinished = false;
+
+    const finishRipple = (ev: PointerEvent) => {
+      if (!isFinished) {
+        element.releasePointerCapture(ev.pointerId);
+        spanElement.classList.add('x-ripple-release');
+        setTimeout(() => {
+          if (spanElement) {
+            spanElement.remove();
+          }
+        }, 400);
+        isFinished = true;
       }
-    }, 200);
+
+      ev.preventDefault();
+    };
+
+    element.addEventListener('pointerup', finishRipple);
+    element.addEventListener('pointercancel', finishRipple);
+    element.addEventListener('pointerleave', finishRipple);
+
+    e.preventDefault();
   });
 };
 
