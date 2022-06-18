@@ -1,0 +1,24 @@
+.x-ripple-js__ripple-button {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.x-ripple-js__ripple-button > span.x-ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: x-ripple-animation 600ms linear forwards;
+  transition: opacity 200ms linear;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.x-ripple-js__ripple-button > span.x-ripple.x-ripple-release {
+  opacity: 0;
+}
+
+@keyframes x-ripple-animation {
+  to {
+    transform: scale(4);
+  }
+}
