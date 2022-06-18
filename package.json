@@ -1,7 +1,7 @@
 {
-  "name": "js-ripple",
+  "name": "modern-js-ripple",
   "version": "1.0.0",
-  "description": "A simple js ripple effect for modern projects",
+  "description": "A simple modern ripple effect in javascript",
   "exports": {
     "import": {
       "default": "./dist/index.mjs",
@@ -16,7 +16,7 @@
     "build": "rollup -c"
   },
   "keywords": [],
-  "author": "Maurice Oegerli (js-ripple-support@m-o.dev)",
+  "author": "Maurice Oegerli (modern-js-ripple-support@m-o.dev)",
   "license": "MIT",
   "devDependencies": {
     "esbuild": "0.14.45",
