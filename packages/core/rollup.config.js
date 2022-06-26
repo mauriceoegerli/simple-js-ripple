@@ -7,7 +7,7 @@ const deps = (d) => (d ? Object.keys(d) : []);
 
 /** @type {import('rollup').RollupOptions} */
 const config = {
-  input: 'src/index.ts',
+  input: './index.ts',
   external: [
     ...builtinModules,
     ...deps(pkg.dependencies),

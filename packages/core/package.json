@@ -12,6 +12,10 @@
       "types": "./dist/types/index.d.cts"
     }
   },
+  "files": [
+    "dist",
+    "package.json"
+  ],
   "scripts": {
     "build": "rollup -c"
   },
@@ -19,7 +23,12 @@
     "node": ">=16.15.0",
     "pnpm": ">=7.1.0"
   },
-  "keywords": ["JS", "Ripple", "Effect", "Node"],
+  "keywords": [
+    "JS",
+    "Ripple",
+    "Effect",
+    "Node"
+  ],
   "author": "Maurice Oegerli (modern-js-ripple-support@m-o.dev)",
   "license": "MIT",
   "devDependencies": {
