@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import { vueDirective } from 'modern-js-ripple';
+import { vueDirective } from '../../core/index';
 
-import 'modern-js-ripple/index.css';
+import '../../core/index.css';
 
 createApp(App).directive('ripple', vueDirective).mount('#app');

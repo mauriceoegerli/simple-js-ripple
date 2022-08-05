@@ -17,7 +17,7 @@
 }
 
 .container-div {
-  max-width: 300px;
+  max-width: 500px;
 }
 
 .button {
@@ -33,5 +33,6 @@
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
   cursor: pointer;
   text-decoration: none;
+  margin: 0 0 0 200px;
 }
 </style>
