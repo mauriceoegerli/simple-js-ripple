@@ -1,5 +1,7 @@
 import esbuild from 'rollup-plugin-esbuild';
 import dts from 'rollup-plugin-dts';
+import css from 'rollup-plugin-import-css';
+import ignoreImport from 'rollup-plugin-ignore-import';
 import pkg from './package.json';
 import { builtinModules } from 'module';
 
@@ -19,7 +21,7 @@ const config = {
 export default [
   {
     ...config,
-    plugins: [esbuild()],
+    plugins: [esbuild(), css()],
     output: [
       { file: 'dist/index.mjs', format: 'esm' },
       { file: 'dist/index.cjs', format: 'cjs' }
@@ -27,7 +29,12 @@ export default [
   },
   {
     ...config,
-    plugins: [dts()],
+    plugins: [
+      dts(),
+      ignoreImport({
+        extensions: ['.css']
+      })
+    ],
     output: [
       {
         file: 'dist/types/index.d.mts',
